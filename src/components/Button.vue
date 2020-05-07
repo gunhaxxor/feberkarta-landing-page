@@ -20,6 +20,7 @@ export default {
   padding: 0.7rem 1rem;
   border-radius: 2rem;
   border: 0;
+  font-family: 'Nunito';
 }
 
 .default-colors {
