@@ -1,17 +1,20 @@
 <template>
   <div id="banner-wrapper">
     <div id="banner-info-box">
-      <h1>Bidra till att hitta bästa lösningen för att kartlägga symtom</h1>
+      <h1>
+        Bidra till en öppen lösning för att kartlägga symtom under
+        Coronapandemin
+      </h1>
       <p>
         Hjälp till genom att
       </p>
       <ul>
-        <li>ölkjhas deföl kh asdf lköjhasd</li>
-        <li>asldkj fhals kjdhf dlkjhf</li>
-        <li>plkjasdf asöldkfj asdfölkj</li>
-        <li>dsaslkjh falkjdhsf lk l lkjdhf</li>
+        <li>Rapportera anonymt hur du mår i appen</li>
+        <li>Ge feedback på appen</li>
+        <li>Diskutera möjliga lösningar</li>
+        <li>Bidra till apputvecklingen</li>
       </ul>
-      <Button inverted>Starta appen</Button>
+      <Button inverted bigger>Starta appen</Button>
     </div>
   </div>
 </template>
@@ -26,24 +29,34 @@ export default {
 
 <style lang="scss">
 #banner-wrapper {
-  padding-top: 4rem;
   width: 100%;
   height: 25rem;
-  // background-color: blueviolet;
-  background: linear-gradient(
-      rgba(142, 142, 255, 0.4),
-      rgba(142, 142, 255, 0.4)
-    ),
-    url('~@/assets/kelly-sikkema-lgWqGhqSr0g-unsplash.png');
-
-  // background-blend-mode: overlay;
+  background: url('~@/assets/banner_feberkarta.png');
   background-size: cover;
   background-position-y: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #banner-info-box {
   // margin-top: 4rem;
+  max-width: 40rem;
   color: $white;
+
+  & h1 {
+    margin-top: 0;
+  }
+
+  & p {
+    margin-bottom: 0;
+  }
+
+  & ul {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 #launch-app-button {

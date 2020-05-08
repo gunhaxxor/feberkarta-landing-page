@@ -1,7 +1,7 @@
 <template>
   <div id="why-fevermap-wrapper">
+    <h1>Varför feberkarta</h1>
     <div id="why-fevermap-content">
-      <h1>Varför feberkarta</h1>
       <div v-for="c in cardsContent" :key="c.title">
         <h2>{{ c.title }}</h2>
         <p>
@@ -24,12 +24,13 @@ export default {
           body: 'Du behöver inte registrera några personuppgifter',
         },
         {
-          title: '10 sek att rapportera',
-          body: 'Snabbt och enkelt att använda',
+          title: 'Det tar 10 sekunder',
+          body: 'Det går snabbt och enkelt att rapportera ditt mående',
         },
         {
           title: 'Följ ditt mående',
-          body: 'Se en kurva på ditt mående',
+          body:
+            'Om du fortsätter att rapportera kan du följa utvecklingen och se en kurva på ditt mående',
         },
       ],
     }
@@ -42,19 +43,22 @@ export default {
 
 <style lang="scss">
 #why-fevermap-wrapper {
+  display: grid;
+  grid-template-rows: min-content auto;
   & > h1 {
-    white-space: nowrap;
+    // white-space: nowrap;
   }
 }
 
 #why-fevermap-content {
-  height: auto;
+  // height: auto;
   display: grid;
-  grid-template-rows: min-content repeat(1fr);
-  grid-gap: 10px;
+  // grid-template-rows: max-content;
+  grid-gap: 2rem;
 
   & h2 {
     margin-top: 0;
+    margin-bottom: 0rem;
   }
 }
 </style>

@@ -1,53 +1,50 @@
 <template>
   <div id="app">
-    <top-section class="site-padding"></top-section>
-    <Banner class="site-padding" />
+    <router-view></router-view>
+    <!-- <top-section></top-section>
+    <Banner />
     <div id="about-and-why">
-      <AboutUs class="site-padding" />
+      <AboutUs />
       <WhyFevermap />
     </div>
+    <Footer />
     <img id="ui-pictures" src="@/assets/ui-overview-web.png" />
-    <HowToContribute />
+    <HowToContribute /> -->
   </div>
 </template>
 
 <script>
-import TopSection from '@/sections/TopSection.vue'
-import Banner from '@/sections/Banner.vue'
-import AboutUs from '@/sections/AboutUs.vue'
-import WhyFevermap from '@/sections/WhyFevermap.vue'
-import HowToContribute from '@/sections/HowToContribute.vue'
+// import TopSection from '@/sections/TopSection.vue'
+// import Banner from '@/sections/Banner.vue'
+// import AboutUs from '@/sections/AboutUs.vue'
+// import WhyFevermap from '@/sections/WhyFevermap.vue'
+// import HowToContribute from '@/sections/HowToContribute.vue'
+// import Footer from '@/sections/Footer.vue'
 
 export default {
   name: 'App',
-  components: {
-    TopSection,
-    Banner,
-    AboutUs,
-    WhyFevermap,
-    HowToContribute,
-  },
+  // components: {
+  //   TopSection,
+  //   Banner,
+  //   AboutUs,
+  //   WhyFevermap,
+  //   HowToContribute,
+  //   Footer,
+  // },
 }
 </script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Nunito:wght@700&display=swap');
 
-#about-and-why {
-  display: grid;
-  grid-template-columns: auto max-content;
-  column-gap: 5rem;
-}
-
-#ui-pictures {
-  display: block;
-  margin: auto;
-  // margin-left: auto;
-  // margin-right: auto;
-}
+$default-font-size: 0.9rem;
 
 body {
   margin: 0;
+}
+
+div {
+  box-sizing: border-box;
 }
 
 h1 {
@@ -60,11 +57,23 @@ h2 {
   color: $secondary;
 }
 
-// .site-padding
-#app > div {
-  padding-left: 4rem;
-  padding-right: 4rem;
-  box-sizing: border-box;
+p,
+ul {
+  font-family: 'Karla', sans-serif;
+  // font-weight: bold;
+  font-size: $default-font-size;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+ul {
+  padding-inline-start: 1rem;
+}
+
+.small-text,
+.small-text * {
+  // font-size: 0.8em;
+  font-size: $default-font-size * 0.8;
 }
 
 #app {

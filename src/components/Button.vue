@@ -1,6 +1,10 @@
 <template>
   <button
-    :class="[inverted ? 'inverted-colors' : 'default-colors']"
+    :class="[
+      'styled-button',
+      inverted ? 'inverted-colors' : 'default-colors',
+      bigger ? 'bigger-button' : '',
+    ]"
     id="styled-button"
   >
     <slot></slot>
@@ -10,17 +14,23 @@
 <script>
 export default {
   name: 'Button',
-  props: { inverted: Boolean },
+  props: { inverted: Boolean, bigger: Boolean },
   computed: {},
 }
 </script>
 
-<style lang="scss">
-#styled-button {
-  padding: 0.7rem 1rem;
+<style scoped lang="scss">
+.styled-button {
+  padding: 0.5rem 2rem;
   border-radius: 2rem;
   border: 0;
   font-family: 'Nunito';
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bigger-button {
+  padding: 0.7rem 2.3rem;
 }
 
 .default-colors {
