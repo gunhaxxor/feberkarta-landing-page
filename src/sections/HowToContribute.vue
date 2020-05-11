@@ -75,4 +75,10 @@ export default {
     margin-bottom: 2rem;
   }
 }
+
+@media (max-width: $mobile-breakpoint) {
+  .help-box {
+    align-items: center;
+  }
+}
 </style>

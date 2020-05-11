@@ -10,15 +10,24 @@
 </template>
 
 <script>
+// import { Slide } from 'vue-burger-menu'
 export default {
   name: 'TopSection',
+  // components: Slide,
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
+@media (max-width: $mobile-breakpoint) {
+  #top-menu {
+    display: none;
+  }
+}
+
 #top-section-wrapper {
   width: 100%;
-  /* padding: 0 5rem; */
+  padding-left: 4rem;
+  padding-right: 4rem;
   // background-color: lime;
   display: grid;
   grid-template-columns: min-content auto;

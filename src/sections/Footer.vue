@@ -47,6 +47,7 @@ export default {
 <style lang="scss">
 #footer-wrapper {
   margin-top: 10rem;
+  overflow: hidden;
 }
 #contact-info {
   // float: left;

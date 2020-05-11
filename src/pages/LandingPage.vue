@@ -1,12 +1,12 @@
 <template>
   <div id="landing-page-wrapper">
-    <top-section></top-section>
     <Banner />
     <div id="about-and-why">
-      <AboutUs />
-      <WhyFevermap />
+      <AboutUs class="about-area" />
+      <WhyFevermap class="why-area" />
+      <img id="ui-pictures" src="@/assets/ui-overview-web.png" />
     </div>
-    <img id="ui-pictures" src="@/assets/ui-overview-web.png" />
+
     <HowToContribute />
     <Partners />
     <Footer />
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import TopSection from '@/sections/TopSection.vue'
 import Banner from '@/sections/Banner.vue'
 import AboutUs from '@/sections/AboutUs.vue'
 import WhyFevermap from '@/sections/WhyFevermap.vue'
@@ -24,7 +23,6 @@ import Partners from '@/sections/Partners.vue'
 export default {
   name: 'LandingPage',
   components: {
-    TopSection,
     Banner,
     AboutUs,
     WhyFevermap,
@@ -35,16 +33,38 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #about-and-why {
   display: grid;
-  grid-template-columns: auto minmax(20rem, 0.4fr);
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    'about why'
+    'uipics uipics';
   column-gap: 5rem;
 }
 
+@media (max-width: $mobile-breakpoint) {
+  #about-and-why {
+    grid-template-areas:
+      'about about'
+      'uipics uipics'
+      'why why';
+  }
+}
+
+.about-area {
+  grid-area: about;
+}
+
+.why-area {
+  grid-area: why;
+}
+
 #ui-pictures {
+  grid-area: uipics;
   display: block;
   margin: auto;
+  width: 100%;
   // margin-left: auto;
   // margin-right: auto;
 }

@@ -1,6 +1,21 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <TopSection />
+    <Slide id="hamburger-menu" right>
+      <a id="help" href="#">
+        <span>Hjälp till</span>
+      </a>
+      <a id="faq" href="#">
+        <span>Vanliga frågor</span>
+      </a>
+      <a id="contact" href="#">
+        <span>Kontakt</span>
+      </a>
+    </Slide>
+
+    <main id="page-wrap">
+      <router-view></router-view>
+    </main>
     <!-- <top-section></top-section>
     <Banner />
     <div id="about-and-why">
@@ -21,26 +36,24 @@
 // import HowToContribute from '@/sections/HowToContribute.vue'
 // import Footer from '@/sections/Footer.vue'
 
+import TopSection from '@/components/TopSection.vue'
+import { Slide } from 'vue-burger-menu'
+
 export default {
   name: 'App',
-  // components: {
-  //   TopSection,
-  //   Banner,
-  //   AboutUs,
-  //   WhyFevermap,
-  //   HowToContribute,
-  //   Footer,
-  // },
+  components: {
+    TopSection,
+    Slide,
+  },
 }
 </script>
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Nunito:wght@700&display=swap');
 
-$default-font-size: 0.9rem;
-
 body {
   margin: 0;
+  box-sizing: border-box;
 }
 
 div {
@@ -48,22 +61,28 @@ div {
 }
 
 h1 {
-  font-family: 'Nunito', sans-serif;
+  font-family: $header-font-family;
 }
 
 h2 {
-  font-family: 'Karla', sans-serif;
+  font-family: $default-font-family;
   font-weight: bold;
   color: $secondary;
 }
 
 p,
 ul {
-  font-family: 'Karla', sans-serif;
+  font-family: $default-font-family;
   // font-weight: bold;
   font-size: $default-font-size;
   line-height: 1.5;
   margin-top: 0.5rem;
+}
+
+span {
+  font-family: $default-font-family;
+  font-size: $default-font-size;
+  line-height: 1.5;
 }
 
 ul {
@@ -77,9 +96,25 @@ ul {
 }
 
 #app {
-  font-family: 'Karla', sans-serif;
+  font-family: $default-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+@media (max-width: $mobile-breakpoint) {
+  #hamburger-menu {
+    display: unset;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
 }
 </style>

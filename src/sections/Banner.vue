@@ -5,15 +5,17 @@
         Bidra till en öppen lösning för att kartlägga symtom under
         Coronapandemin
       </h1>
-      <p>
-        Hjälp till genom att
-      </p>
-      <ul>
-        <li>Rapportera anonymt hur du mår i appen</li>
-        <li>Ge feedback på appen</li>
-        <li>Diskutera möjliga lösningar</li>
-        <li>Bidra till apputvecklingen</li>
-      </ul>
+      <div id="text-thingy">
+        <span>
+          Hjälp till genom att
+        </span>
+        <ul>
+          <li>Rapportera <b>anonymt</b> hur du mår i appen</li>
+          <li>Ge feedback på appen</li>
+          <li>Diskutera möjliga lösningar</li>
+          <li>Bidra till apputvecklingen</li>
+        </ul>
+      </div>
       <Button inverted bigger>Starta appen</Button>
     </div>
   </div>
@@ -27,10 +29,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 #banner-wrapper {
   width: 100%;
-  height: 25rem;
+  // height: 25rem;
   background: url('~@/assets/banner_feberkarta.png');
   background-size: cover;
   background-position-y: center;
@@ -41,21 +43,57 @@ export default {
 }
 
 #banner-info-box {
-  // margin-top: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   max-width: 40rem;
   color: $white;
 
   & h1 {
     margin-top: 0;
   }
+}
 
-  & p {
+#text-thingy {
+  & span {
+    // display: block;
     margin-bottom: 0;
   }
 
   & ul {
     margin-top: 0.5rem;
     margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  #banner-info-box {
+    text-align: center;
+  }
+
+  #text-thingy {
+    margin-bottom: 2rem;
+
+    & span {
+      display: inline;
+      margin-right: -0.5rem;
+    }
+
+    & span:after {
+      margin: -0.1rem;
+      content: ':';
+    }
+
+    & ul {
+      display: inline;
+
+      & li {
+        display: inline;
+      }
+
+      & li::after {
+        content: '. ';
+      }
+    }
   }
 }
 

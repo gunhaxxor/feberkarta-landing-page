@@ -2,7 +2,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `@import "~@/styles/palette.scss"`,
+        prependData: `@import "~@/styles/palette.scss", "~@/styles/variables.scss";`,
       },
       // by default the `sass` option will apply to both syntaxes
       // because `scss` syntax is also processed by sass-loader underlyingly
@@ -10,7 +10,7 @@ module.exports = {
       // `scss` syntax requires an semicolon at the end of a statement, while `sass` syntax requires none
       // in that case, we can target the `scss` syntax separately using the `scss` option
       scss: {
-        prependData: `@import "~@/styles/palette.scss";`,
+        prependData: `@import "~@/styles/palette.scss", "~@/styles/variables.scss";`,
       },
     },
   },
